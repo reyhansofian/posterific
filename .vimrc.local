@@ -1,0 +1,3 @@
+autocmd FileType javascript set formatprg=prettier\ --stdin
+autocmd BufWritePre *.js :Neoformat prettier
+
