@@ -9,23 +9,26 @@ import PosterConfirmationScreen from './components/PosterConfirmationScreen';
 import CheckoutScreen from './components/CheckoutScreen';
 
 export default class Posterific extends Component {
-
   renderScene(route, navigator) {
     if (route.name === 'Home') {
-      return <HomeScreen navigator={navigator} />
+      return <HomeScreen navigator={navigator} />;
     }
     if (route.name === 'PosterList') {
-      return <PosterListScreen navigator={navigator} />
+      return <PosterListScreen navigator={navigator} />;
     }
     if (route.name === 'PosterConfig') {
-      return <PosterConfigScreen navigator={navigator} {...route.passProps} />
+      return <PosterConfigScreen navigator={navigator} {...route.passProps} />;
     }
     if (route.name === 'PosterConfirmation') {
-      return <PosterConfirmationScreen navigator={navigator} {...route.passProps} />
+      return (
+        <PosterConfirmationScreen navigator={navigator} {...route.passProps} />
+      );
     }
     if (route.name === 'Checkout') {
-      return <CheckoutScreen navigator={navigator} {...route.passProps} />
+      return <CheckoutScreen navigator={navigator} {...route.passProps} />;
     }
+
+    console.log('Test');
   }
 
   render() {
@@ -35,7 +38,7 @@ export default class Posterific extends Component {
         initialRoute={{ name: 'Home' }}
         renderScene={this.renderScene}
       />
-    )
+    );
   }
 }
 
